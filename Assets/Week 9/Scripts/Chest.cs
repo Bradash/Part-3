@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
-public enum ChestType { Villager, Merchant, Archer}
+public enum ChestType { Villager, Merchant, Archer, Theif}
 public class Chest : MonoBehaviour
 {
     public Animator animator;
