@@ -8,34 +8,30 @@ public class Thief : Villager
     public GameObject dagger;
     public Transform spawnPoint1;
     public Transform spawnPoint2;
-    float timer;
     float maxTime = 0.5f;
     public override ChestType CanOpen()
     {
         return ChestType.Theif;
 }
-                protected override void Attack()
+    protected override void Attack()
     {
+        StartCoroutine(Dash());
         destination = transform.position;
-        Instantiate(dagger, spawnPoint1.position, spawnPoint1.rotation);
-        Instantiate(dagger, spawnPoint2.position, spawnPoint2.rotation);
+
 
         destination = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    }
+    IEnumerator Dash()
+    {
         speed = 8;
+        yield return new WaitForSeconds(maxTime);
         base.Attack();
+        Instantiate(dagger, spawnPoint1.position, spawnPoint1.rotation);
+        Instantiate(dagger, spawnPoint2.position, spawnPoint2.rotation);
+        speed = 3;
     }
     protected override void Update()
     {
-        if (speed > 3)
-        {
-            timer = Time.deltaTime + timer;
-            if (timer > maxTime)
-            {
-                speed = 3;
-                maxTime = timer + 0.5f;
-            }
-        }
-
         if (Input.GetMouseButtonDown(0))
         {
            speed = 3;
