@@ -14,6 +14,12 @@ public class Thief : Villager
     {
         return ChestType.Theif;
     }
+
+    public override string ToString()
+    {
+        return "Hi I'm Bob!";
+    }
+
     protected override void Attack()
     {
         if (dashing != null) { 
