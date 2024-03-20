@@ -19,19 +19,18 @@ public class Thief : Villager
         if (dashing != null) { 
         StopCoroutine(dashing);
         }
+        dashing = StartCoroutine(Dash());
 
         StopCoroutine(Dash());
         destination = transform.position;
         destination = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        StartCoroutine(Dash());
     }
     IEnumerator Dash()
     {
         speed = 8;
-        if (Input.GetMouseButtonDown(0))
+       while ( speed > 3)
         {
-            speed = 3;
-            yield break;
+            yield return null;
         }
 
         yield return new WaitForSeconds(maxTime);
