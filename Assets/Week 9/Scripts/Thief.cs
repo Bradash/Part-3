@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Thief : Villager
@@ -22,8 +20,9 @@ public class Thief : Villager
 
     protected override void Attack()
     {
-        if (dashing != null) { 
-        StopCoroutine(dashing);
+        if (dashing != null)
+        {
+            StopCoroutine(dashing);
         }
         dashing = StartCoroutine(Dash());
 
@@ -34,7 +33,7 @@ public class Thief : Villager
     IEnumerator Dash()
     {
         speed = 8;
-       while ( speed > 3)
+        while (speed > 3)
         {
             yield return null;
         }
