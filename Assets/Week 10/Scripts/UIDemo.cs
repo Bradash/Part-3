@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class UIDemo : MonoBehaviour
 {
-    // Start is called before the first frame update
+    Color color;
+    public SpriteRenderer sprite;
+
     void Start()
     {
-        
+        sprite = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeColor(float change)
     {
-        
+        float interpolation = Time.deltaTime;
+
+        color = Color.Lerp(Color.white, Color.red, change/60);
+        sprite.color = color;
     }
 }

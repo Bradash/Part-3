@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,15 +5,19 @@ public class SliderClock : MonoBehaviour
 {
     public Slider slider;
     float t = 0f;
-
-    IEnumerator Counting()
+    private void Update()
     {
-        while (t < 60)
+
+        if (slider.value < slider.maxValue)
         {
-            slider.value += 1;
+            if (t > 1) {
+                t = 0;
+                slider.value += 1;
+                Debug.Log(t.ToString());
+            }
             t += Time.deltaTime;
         }
-        yield return null;
 
     }
+
 }
