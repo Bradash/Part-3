@@ -11,6 +11,7 @@ public class CharacterControl : MonoBehaviour
     public Merchant merchant;
     public Archer archer;
     public Thief thief;
+    Vector3 villagerScale;
 
     public static string VillagerType;
     public TextMeshProUGUI textMeshProUGUI;
@@ -42,11 +43,23 @@ public class CharacterControl : MonoBehaviour
         VillagerType = villager.name;
         SelectedVillager.Selected(true);
     }
-    
+    private void Start()
+    {
+        villagerScale.x = 1f;
+        villagerScale.y = 1f;
+        villagerScale.z = 1f;
+    }
+    public void VillagerScale(float scale = 0.5f)
+    {
+        villagerScale.x = scale*2;
+        villagerScale.y = scale*2;
+        villagerScale.z = scale*2;
 
+    }
     private void Update()
     {
         textMeshProUGUI.text = VillagerType;
+        SelectedVillager.transform.localScale = villagerScale;
     }
 
 }
