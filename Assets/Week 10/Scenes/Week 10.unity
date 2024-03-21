@@ -1249,11 +1249,11 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Option A
+    - m_Text: Axe
       m_Image: {fileID: 21300230, guid: 15b2d2faaecad4bfb9edc6585d94f509, type: 3}
-    - m_Text: Option B
+    - m_Text: Bow
       m_Image: {fileID: 21300226, guid: 15b2d2faaecad4bfb9edc6585d94f509, type: 3}
-    - m_Text: Option C
+    - m_Text: Dagger
       m_Image: {fileID: 21300266, guid: 15b2d2faaecad4bfb9edc6585d94f509, type: 3}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1674,7 +1674,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Option A
+  m_text: Axe
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
