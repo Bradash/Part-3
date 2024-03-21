@@ -9,7 +9,7 @@ public class Villager : MonoBehaviour
     Rigidbody2D rb;
     Animator animator;
 
-    bool clickingOnSelf;
+    public bool clickingOnSelf;
     bool isSelected;
     public GameObject highlight;
 
@@ -30,7 +30,7 @@ public class Villager : MonoBehaviour
         highlight.SetActive(isSelected);
     }
 
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         CharacterControl.SetSelectedVillager(this);
         clickingOnSelf = true;
