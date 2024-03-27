@@ -30,7 +30,7 @@ public class Growing : MonoBehaviour
         StartCoroutine(Square());
         yield return new WaitForSeconds(1);
         coroutine = StartCoroutine(Triangle());
-        Circle();
+        StartCoroutine(Circle());
         yield return coroutine;
         running -= 1;
 
@@ -84,5 +84,6 @@ public class Growing : MonoBehaviour
             circle.transform.localScale = scale;
             yield return null;
         }
+        yield return Circle();
     }
 }
