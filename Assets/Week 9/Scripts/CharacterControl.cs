@@ -12,9 +12,10 @@ public class CharacterControl : MonoBehaviour
     public Archer archer;
     public Thief thief;
     Vector3 villagerScale;
+    public static int Health;
 
     public static string VillagerType;
-    public TextMeshProUGUI textMeshProUGUI;
+    public TextMeshProUGUI HealthUI;
     public static Villager SelectedVillager { get; private set; }
 
     public void Dropdown(int options)
@@ -58,8 +59,7 @@ public class CharacterControl : MonoBehaviour
     }
     private void Update()
     {
-        textMeshProUGUI.text = VillagerType;
-        SelectedVillager.transform.localScale = villagerScale;
+        HealthUI.text = Health.ToString();
     }
 
 }
