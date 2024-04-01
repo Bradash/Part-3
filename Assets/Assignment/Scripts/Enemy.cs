@@ -18,8 +18,7 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         destination = points[point].position;
-        Debug.Log(transform.position - destination);
-        transform.position = Vector3.MoveTowards(transform.position, destination, Time.deltaTime * 5);
+        transform.position = Vector3.MoveTowards(transform.position, destination, Time.deltaTime);
         if (transform.position == destination && point != points.Length)
         {
             point++;

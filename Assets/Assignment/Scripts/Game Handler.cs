@@ -10,6 +10,20 @@ public class GameHandler : MonoBehaviour
     public GameObject enemyPrefab;
     public Transform spawnPoint;
     public Transform[] points;
+    public static Ally selectedAlly { get; private set; }
+
+    public static void SelectAlly(Ally ally)
+    {
+
+        Debug.Log(selectedAlly != null);
+        
+        if (selectedAlly != null)
+        {
+            selectedAlly.deselect();
+        }
+        selectedAlly = ally;
+        selectedAlly.select();
+    }
 
 
     // Start is called before the first frame update
