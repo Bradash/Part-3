@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.GraphicsBuffer;
 
 public class Ally : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class Ally : MonoBehaviour
     public Color initialColor;
     public float speed = 10;
     Vector3 Movement;
+    Vector3 mousePosition;
+    public GameObject MissilePrefab;
+    Quaternion lookRotation;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,8 +29,17 @@ public class Ally : MonoBehaviour
         Movement.y = Input.GetAxis("Vertical");
         if (selected)
         {
+            mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            lookRotation = Quaternion.LookRotation(Vector3.forward, transform.position - mousePosition);
+            transform.rotation = lookRotation;
+            if (Input.GetMouseButtonDown(0))
+            {
+                Instantiate(MissilePrefab, transform.position, lookRotation);
+
+
+            }
             //transform.position = Vector3.MoveTowards(transform.position, mouse.position, Time.deltaTime);
-            transform.Translate(Movement * speed * Time.deltaTime);
+            transform.Translate(Movement * speed * Time.deltaTime, Space.World);
         }
 
     }

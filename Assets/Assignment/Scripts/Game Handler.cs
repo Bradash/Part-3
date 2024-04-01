@@ -65,7 +65,7 @@ public class GameHandler : MonoBehaviour
             GameObject enemy = Instantiate(enemyPrefab, spawnPoint.transform);
             Enemy enemyComponent = enemy.GetComponent<Enemy>();
             enemyComponent.points = points;
-            yield return new WaitForSeconds(10 - currentRound/10);
+            yield return new WaitForSeconds(5 - currentRound/5);
             yield return spawnEnemy();
         }
 

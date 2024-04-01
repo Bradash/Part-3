@@ -534,6 +534,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   initialColor: {r: 0, g: 0, b: 0, a: 0}
   speed: 10
+  MissilePrefab: {fileID: 3561796336912097731, guid: e0cd8fdb5f4c0a24a899e166fdf3a552, type: 3}
 --- !u!61 &217081254
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1155,6 +1156,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   initialColor: {r: 0, g: 0, b: 0, a: 0}
   speed: 10
+  MissilePrefab: {fileID: 3561796336912097731, guid: e0cd8fdb5f4c0a24a899e166fdf3a552, type: 3}
 --- !u!61 &680198387
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1375,7 +1377,9 @@ MonoBehaviour:
   - {fileID: 289840151}
   HealthUI: {fileID: 486499110}
   RoundUI: {fileID: 2084845430}
-  RoundTime: 1
+  WinUI: {fileID: 0}
+  LoseUI: {fileID: 0}
+  RoundTime: 10
 --- !u!4 &805801672
 Transform:
   m_ObjectHideFlags: 0
