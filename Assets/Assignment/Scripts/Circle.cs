@@ -45,7 +45,7 @@ public class Circle : Ally
     IEnumerator Reload()
     {
         isReloading = true;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
         isReloading = false;
         attackCount = 0;
         yield return null;
