@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
     public Transform[] points;
     public Vector3 destination;
     int point;
+    int enemyHealth;
 
 
     // Start is called before the first frame update
@@ -23,7 +24,7 @@ public class Enemy : MonoBehaviour
         }
         if (transform.position == destination && point == points.Length)
         {
-            GameHandler.Health--;
+            GameHandler.healthDamage();
             Destroy(gameObject);
         }
     }
@@ -32,8 +33,13 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Projectile")
         {
-            Destroy(gameObject);
+            enemyHealth++;
+            
         } 
+        if (enemyHealth == 3)
+        {
+            Destroy(gameObject);
+        }
     }
 
 }

@@ -11,11 +11,11 @@ public class Ally : MonoBehaviour
     public bool selected;
     public SpriteRenderer spriteRenderer;
     public Color initialColor;
-    public float speed = 10;
-    Vector3 Movement;
-    Vector3 mousePosition;
+    public float speed = 2;
+    protected Vector3 Movement;
+    protected Vector3 mousePosition;
     public GameObject MissilePrefab;
-    Quaternion lookRotation;
+    protected Quaternion lookRotation;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +23,7 @@ public class Ally : MonoBehaviour
         initialColor = spriteRenderer.color;
     }
 
-    public void Update()
+    public virtual void Update()
     {
         Movement.x = Input.GetAxis("Horizontal");
         Movement.y = Input.GetAxis("Vertical");
@@ -35,13 +35,10 @@ public class Ally : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 Instantiate(MissilePrefab, transform.position, lookRotation);
-
-
             }
             //transform.position = Vector3.MoveTowards(transform.position, mouse.position, Time.deltaTime);
             transform.Translate(Movement * speed * Time.deltaTime, Space.World);
         }
-
     }
 
     private void OnMouseDown()

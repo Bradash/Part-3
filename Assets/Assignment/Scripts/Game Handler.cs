@@ -51,12 +51,15 @@ public class GameHandler : MonoBehaviour
         }
         if (currentRound == 100)
         {
-            
                 WinUI.enabled = true;
         }
 
     }
+    public static void healthDamage()
+    {
+        Health--;
 
+    }
 
     IEnumerator spawnEnemy()
     {
@@ -65,7 +68,7 @@ public class GameHandler : MonoBehaviour
             GameObject enemy = Instantiate(enemyPrefab, spawnPoint.transform);
             Enemy enemyComponent = enemy.GetComponent<Enemy>();
             enemyComponent.points = points;
-            yield return new WaitForSeconds(5 - currentRound/5);
+            yield return new WaitForSeconds(2 - currentRound/60);
             yield return spawnEnemy();
         }
 
