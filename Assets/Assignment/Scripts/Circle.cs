@@ -34,7 +34,7 @@ public class Circle : Ally
 
     void RandomAttack()
     {
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 10; i++)
         {
             Instantiate(MissilePrefab, transform.position, Quaternion.Euler(0, 0, Random.Range(0f, 360f)));
         }
@@ -45,7 +45,7 @@ public class Circle : Ally
     IEnumerator Reload()
     {
         isReloading = true;
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(1);
         isReloading = false;
         attackCount = 0;
         yield return null;
